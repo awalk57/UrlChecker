@@ -4,8 +4,8 @@ import grequests
 
 def exception_handler(request, exception):
 
-    print "Request Failed"
-    print exception.request.url
+    print "Request Failed for ->", exception.request.url, exception.message
+
 
 # read in urls from file
 with open("urls.txt") as f:
