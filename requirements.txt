@@ -4,3 +4,4 @@ Flask-login
 Flask-moment
 Flask-Bootstrap
 Flask-WTF
+Flask-SQLAlchemy
