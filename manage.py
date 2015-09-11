@@ -51,11 +51,18 @@ class Url(db.Model):
     lastchecked = db.Column(db.DateTime)
     resplength  = db.Column(db.Integer)
 
+    def __repr__(self):
+        return '<Url %r>' % self.urltext
+
+
 class NameForm(Form):
     name = StringField("What is your name?", validators=[Required()])
     submit = SubmitField('Submit')
 
 class UrlForm(Form):
+    appname = StringField("Application name?", validators=[Required()])
+    urltext = StringField("URL?", validators=[Required()])
+    submit = SubmitField('Submit URL')
 
 
 @app.errorhandler(404)
