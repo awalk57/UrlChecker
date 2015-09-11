@@ -3,6 +3,7 @@ from flask import Flask, render_template, session, redirect, url_for, flash
 from flask.ext.script import Manager
 from flask.ext.bootstrap import Bootstrap
 from flask.ext.moment import Moment
+from flask.ext.restless import APIManager
 from flask.ext.wtf import Form
 from wtforms import StringField, SubmitField
 from wtforms.validators import Required
@@ -41,10 +42,20 @@ class User(db.Model):
     def __repr__(self):
         return '<User %r>' % self.username
 
+class Url(db.Model):
+    __tablename__ = 'urls'
+    id = db.Column(db.Integer, primary_key=True)
+    appname = db.Column(db.Text, unique=False, index=True)
+    urltext = db.Column(db.Text, unique=False, index=True)
+    status_code = db.Column(db.String(64))
+    lastchecked = db.Column(db.DateTime)
+    resplength  = db.Column(db.Integer)
 
 class NameForm(Form):
-    name = StringField('What is your name?', validators=[Required()])
+    name = StringField("What is your name?", validators=[Required()])
     submit = SubmitField('Submit')
+
+class UrlForm(Form):
 
 
 @app.errorhandler(404)
@@ -70,6 +81,8 @@ def index():
         return redirect(url_for('index'))
     return render_template('index.html', form=form, name=session.get('name'))
 
+api_manager = APIManager(app, flask_sqlalchemy_db=db)
+api_manager.create_api(User, methods=['GET', 'POST', 'DELETE', 'PUT'])
 
 if __name__ == '__main__':
     db.create_all()

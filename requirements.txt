@@ -5,3 +5,4 @@ Flask-moment
 Flask-Bootstrap
 Flask-WTF
 Flask-SQLAlchemy
+Flask-Restless
