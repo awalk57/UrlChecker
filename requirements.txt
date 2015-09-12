@@ -7,3 +7,7 @@ Flask-WTF
 Flask-SQLAlchemy
 Flask-Restless
 Flask-Migrate
+Werkzeug
+alemibic
+blinker
+itsdangerous
