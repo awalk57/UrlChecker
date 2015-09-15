@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3676095825">
+  <component name="DataSourceManagerImpl" format="xml" hash="3945857482">
     <data-source source="LOCAL" name="SQLite - URLdb Dev" uuid="2137ef5e-6845-4970-ab9c-93104a59f8f9">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
@@ -8,11 +8,11 @@
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/data-dev.sqlite</jdbc-url>
       <libraries />
     </data-source>
-    <data-source source="LOCAL" name="SQLite - HelloDB" uuid="7023f886-af40-4f64-8efb-8478b7f01aae">
+    <data-source source="LOCAL" name="SQLite - Test" uuid="d42387a2-6880-4180-85bd-1508e6cf73d1">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/data.sqlite</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/data-test.sqlite</jdbc-url>
       <libraries />
     </data-source>
   </component>
